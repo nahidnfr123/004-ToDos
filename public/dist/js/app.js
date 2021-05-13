@@ -67513,7 +67513,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: routes
 });
 router.beforeEach(function (to, from, next) {
-  document.title = "".concat("Todo App (nfr)", " - ").concat(to.name);
+  document.title = "".concat("ToDora (nfr)", " - ").concat(to.name);
   window.scrollTo(0, 0);
   next();
 });
@@ -69859,8 +69859,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\work\@Projects\01-Todo-App\resources\assets\js\app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! E:\work\@Projects\01-Todo-App\resources\assets\css\app.css */"./resources/assets/css/app.css");
+__webpack_require__(/*! E:\work\@_PROJECTS\002-ToDora-(19-3-2021)\ToDora\resources\assets\js\app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! E:\work\@_PROJECTS\002-ToDora-(19-3-2021)\ToDora\resources\assets\css\app.css */"./resources/assets/css/app.css");
 
 
 /***/ })
