@@ -1,0 +1,17 @@
+Home Page: Show current day todo ... (options: add, edit, update, delete, search)
+
+Todo Page: Show all todos separated by date ... load more todo option ... (options: add, edit, update, delete, search)
+
+Add new Todo (Global button and modal):
+
+Login/Register:
+
+Profile: (view and update profile)
+
+Settings: (Theme)
+
+
+
+Production level Fix:
+Social Auth,
+Gmail,

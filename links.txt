@@ -1,0 +1,4 @@
+VueX (best):
+https://bernar.do/vuex-store-with-normalized-data-using-a-laravel-backend
+
+
