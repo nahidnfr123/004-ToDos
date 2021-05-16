@@ -3183,6 +3183,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 
 
@@ -5818,14 +5821,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'backdrop',
   data: function data() {
     return {};
   },
-  props: {
-    isSideMenuOpen: Boolean
-  },
+  props: ['currentDateTimeValue', 'isSideMenuOpen'],
   methods: {
     togglePagesMenu: function togglePagesMenu() {},
     closeSideMenu: function closeSideMenu() {
@@ -42115,18 +42133,31 @@ var render = function() {
     [
       _vm.authenticated
         ? _c("SideNav", {
-            attrs: { currentDateTimeValue: _vm.currentDateTimeValue },
+            attrs: {
+              formType: "create",
+              currentDateTimeValue: _vm.currentDateTimeValue
+            },
             on: {
               showTodoFormModal: function($event) {
                 _vm.showTodoFormModal = true
-                _vm.formType = "create"
               }
             }
           })
         : _vm._e(),
       _vm._v(" "),
       _vm.authenticated
-        ? _c("Backdrop", { attrs: { isSideMenuOpen: _vm.isSideMenuOpen } })
+        ? _c("Backdrop", {
+            attrs: {
+              currentDateTimeValue: _vm.currentDateTimeValue,
+              formType: "create",
+              isSideMenuOpen: _vm.isSideMenuOpen
+            },
+            on: {
+              showTodoFormModal: function($event) {
+                _vm.showTodoFormModal = true
+              }
+            }
+          })
         : _vm._e(),
       _vm._v(" "),
       _c(
@@ -45192,8 +45223,8 @@ var render = function() {
             "a",
             {
               staticClass:
-                "ml-6 text-lg font-bold text-gray-800 dark:text-gray-200",
-              attrs: { href: "#" }
+                "ml-6 text-lg font-bold text-gray-800 dark:text-indigo-300",
+              attrs: { href: "/" }
             },
             [_vm._v("\n                ToDo App NFR\n            ")]
           ),
@@ -45201,7 +45232,7 @@ var render = function() {
           _c("ul", { staticClass: "mt-6" }, [
             _c(
               "li",
-              { staticClass: "relative px-6 py-3" },
+              { staticClass: "relative px-3 py-2" },
               [
                 _c("span", {
                   staticClass:
@@ -45214,7 +45245,10 @@ var render = function() {
                   {
                     staticClass:
                       "p-2 pr-4 pl-4 rounded-lg inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-300 dark:text-gray-200",
-                    attrs: { to: "/", "active-class": "active-nav" }
+                    attrs: {
+                      to: { name: "Home" },
+                      "active-class": "active-nav"
+                    }
                   },
                   [
                     _c(
@@ -45246,13 +45280,11 @@ var render = function() {
                 )
               ],
               1
-            )
-          ]),
-          _vm._v(" "),
-          _c("ul", [
+            ),
+            _vm._v(" "),
             _c(
               "li",
-              { staticClass: "relative px-6 py-3" },
+              { staticClass: "relative px-3 py-2" },
               [
                 _c("span", {
                   staticClass:
@@ -45265,7 +45297,10 @@ var render = function() {
                   {
                     staticClass:
                       "p-2 pr-4 pl-4 rounded-lg inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-300 dark:text-gray-200",
-                    attrs: { to: "/todo-lists", "active-class": "active-nav" }
+                    attrs: {
+                      to: { name: "Todo List" },
+                      "active-class": "active-nav"
+                    }
                   },
                   [
                     _c(
@@ -45297,39 +45332,105 @@ var render = function() {
                 )
               ],
               1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "relative px-3 py-2" },
+              [
+                _c("span", {
+                  staticClass:
+                    "isActiveIndicator absolute inset-y-0 left-0 w-1 bg-blue-400 rounded-tr-lg rounded-br-lg",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass:
+                      "p-2 pr-4 pl-4 rounded-lg inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-300 dark:text-gray-200",
+                    attrs: {
+                      to: "/example_component",
+                      "active-class": "active-nav"
+                    }
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "w-5 h-5",
+                        attrs: {
+                          "aria-hidden": "true",
+                          fill: "none",
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
+                          viewBox: "0 0 24 24",
+                          stroke: "currentColor"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d:
+                              "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "ml-4" }, [
+                      _vm._v("Example Component")
+                    ])
+                  ]
+                )
+              ],
+              1
             )
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _c("div", { staticClass: "px-5 my-14" }, [
+            _c("div", { staticClass: "px-5 mb-6 text-center" }, [
+              _c(
+                "p",
+                { staticClass: "text-sm text-green-400 font-bold mb-1" },
+                [_vm._v(_vm._s(_vm.currentDateTimeValue.time))]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-xs text-blue-400 mb-1" }, [
+                _vm._v(_vm._s(_vm.currentDateTimeValue.date))
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass:
+                  "flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600\n                    shadow-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75",
+                on: {
+                  click: function($event) {
+                    return _vm.$emit("showTodoFormModal", true)
+                  }
+                }
+              },
+              [
+                _vm._v(
+                  "\n                    Create New Todo\n                    "
+                ),
+                _c(
+                  "span",
+                  { staticClass: "ml-2", attrs: { "aria-hidden": "true" } },
+                  [_vm._v("+")]
+                )
+              ]
+            )
+          ])
         ])
       ]
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "px-6 my-6" }, [
-      _c(
-        "button",
-        {
-          staticClass:
-            "flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-        },
-        [
-          _vm._v("\n                    Create account\n                    "),
-          _c(
-            "span",
-            { staticClass: "ml-2", attrs: { "aria-hidden": "true" } },
-            [_vm._v("+")]
-          )
-        ]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

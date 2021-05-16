@@ -4,8 +4,8 @@
         <!-- Desktop sidebar -->
         <SideNav
             v-if="authenticated"
-            @showTodoFormModal="showTodoFormModal=true
-            formType= 'create'"
+            @showTodoFormModal="showTodoFormModal=true"
+            formType='create'
             :currentDateTimeValue="currentDateTimeValue"
         ></SideNav>
         <!-- Mobile sidebar -->
@@ -13,6 +13,9 @@
         <!-- Backdrop -->
         <Backdrop
             v-if="authenticated"
+            @showTodoFormModal="showTodoFormModal=true"
+            :currentDateTimeValue="currentDateTimeValue"
+            formType='create'
             :isSideMenuOpen="isSideMenuOpen"
         ></Backdrop>
 
