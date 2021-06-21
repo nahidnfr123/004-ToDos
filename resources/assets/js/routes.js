@@ -3,7 +3,8 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import NotFound from './views/404';
+
+/*import NotFound from './views/404';
 import Register from './views/auth/Register';
 import Login from './views/auth/Login.vue';
 import ForgotPassword from "./views/auth/ForgotPassword";
@@ -14,7 +15,7 @@ import Home from './views/Home';
 import Profile from './views/Profile';
 import Todo from './views/todos/Todo';
 import TodoItem from './views/todos/TodoItem';
-import example_component from './views/partials/examples/Examples_NRF_InputTemplate';
+import example_component from './views/partials/examples/Examples_NRF_InputTemplate';*/
 
 import store from './store/index';
 
@@ -56,33 +57,43 @@ function preventAuthenticated(to, from, next) {
 
 const routes = [
     {
-        path: '/register', name: 'Register', component: Register,
+        path: '/register', name: 'Register',
+        component: () => import(/*webpackChunkName: "Register"*/'./views/auth/Register.vue'),
         beforeEnter: preventAuthenticated
     },
     {
-        path: '/login', name: 'Login', component: Login,
+        path: '/login', name: 'Login',
+        component: () => import(/*webpackChunkName: "Login"*/'./views/auth/Login.vue'),
         beforeEnter: preventAuthenticated
     },
     {
-        path: '/forgot-password', name: 'ForgotPassword', component: ForgotPassword, beforeEnter: preventAuthenticated
-    },
-    {
-        path: '/reset-password/:token', name: 'ResetPassword', component: ResetPassword, beforeEnter: preventAuthenticated
-    },
-    {
-        path: '/social-login/callback/:provider', name: 'SocialLogin', component: SocialLogin,
+        path: '/forgot-password', name: 'ForgotPassword',
+        component: () => import(/*webpackChunkName: "ForgotPassword"*/'./views/auth/ForgotPassword.vue'),
         beforeEnter: preventAuthenticated
     },
     {
-        path: '/email/verify', name: 'EmailVerification', component: EmailVerification,
+        path: '/reset-password/:token', name: 'ResetPassword',
+        component: () => import(/*webpackChunkName: "ResetPassword"*/'./views/auth/ResetPassword.vue'),
+        beforeEnter: preventAuthenticated
+    },
+    {
+        path: '/social-login/callback/:provider', name: 'SocialLogin',
+        component: () => import(/*webpackChunkName: "SocialLogin"*/'./views/auth/SocialLogin.vue'),
+        beforeEnter: preventAuthenticated
+    },
+    {
+        path: '/email/verify', name: 'EmailVerification',
+        component: () => import(/*webpackChunkName: "EmailVerification"*/'./views/auth/EmailVerification.vue'),
         beforeEnter: requireAuthenticated
     },
     {
-        path: '/profile/:username', name: 'Profile', component: Profile,
+        path: '/profile/:username', name: 'Profile',
+        component: () => import(/*webpackChunkName: "Profile"*/'./views/Profile.vue'),
         beforeEnter: requireEmailVerified
     },
     {
-        path: '/', name: 'Home', component: Home,
+        path: '/', name: 'Home',
+        component: () => import(/*webpackChunkName: "Home"*/'./views/Home.vue'),
         beforeEnter: requireEmailVerified
     },
     {
@@ -106,7 +117,7 @@ const routes = [
         // meta: { authOnly: true } // Another way to check authenticated user ...
     },
     {
-        path: '*', name: 'page_not_found', component: NotFound
+        path: '*', name: 'page_not_found', component: () => import(/*webpackChunkName: "PageNotFound"*/'./views/404.vue')
     }
 ]
 

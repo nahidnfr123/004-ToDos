@@ -132,7 +132,7 @@
 
 <script>
 // Basic Use - Covers most scenarios
-import {VueEditor} from "vue2-editor";
+// import {VueEditor} from "vue2-editor";
 import {mapActions, mapState} from "vuex";
 // Advanced Use - Hook into Quill's API for Custom Functionality
 //import { VueEditor, Quill } from "vue2-editor";
@@ -142,7 +142,7 @@ import {mapActions, mapState} from "vuex";
 export default {
     name: 'TodoForm',
     components: {
-        VueEditor,
+        //VueEditor,
     },
     props: {
         showTodoFormModal: {

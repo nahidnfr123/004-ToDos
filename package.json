@@ -26,11 +26,9 @@
     },
     "dependencies": {
         "dayjs": "^1.10.4",
-        "vform": "^1.0.1",
         "vue": "^2.6.12",
         "vue-progressbar": "^0.7.5",
         "vue-router": "^3.4.9",
-        "vue2-editor": "^2.10.2",
         "vuex": "^3.6.0"
     }
 }

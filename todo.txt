@@ -15,3 +15,10 @@ Settings: (Theme)
 Production level Fix:
 Social Auth,
 Gmail,
+
+
+
+# Removed packages ...
+-> "vform": "^1.0.1",
+-> "vue2-editor": "^2.10.2",
+

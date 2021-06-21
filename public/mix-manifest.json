@@ -1,4 +1,16 @@
 {
     "/dist/js/app.js": "/dist/js/app.js",
-    "/dist/css/app.css": "/dist/css/app.css"
+    "/dist/css/app.css": "/dist/css/app.css",
+    "/EmailVerification.js": "/EmailVerification.js",
+    "/ExampleComponent.js": "/ExampleComponent.js",
+    "/ForgotPassword.js": "/ForgotPassword.js",
+    "/Home.js": "/Home.js",
+    "/Login.js": "/Login.js",
+    "/PageNotFound.js": "/PageNotFound.js",
+    "/Profile.js": "/Profile.js",
+    "/Register.js": "/Register.js",
+    "/ResetPassword.js": "/ResetPassword.js",
+    "/SocialLogin.js": "/SocialLogin.js",
+    "/TodoItem.js": "/TodoItem.js",
+    "/Todos.js": "/Todos.js"
 }
